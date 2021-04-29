@@ -46,6 +46,7 @@ zle -N history-beginning-search-forward-end history-search-end
 alias ll="ls -l"
 alias la="ls -al"
 alias cat="bat"
+alias lg="lazygit"
 alias groot="cd-gitroot"
 alias zshrc="vi ${HOME}/.zshrc"
 alias dots="cd ${HOME}/.dotfiles"
