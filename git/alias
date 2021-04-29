@@ -1,0 +1,5 @@
+[alias]
+    st = status
+    fe = fetch
+    co = checkout
+    sw = switch

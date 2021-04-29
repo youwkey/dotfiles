@@ -13,6 +13,9 @@ vi Brewfile
 # Bundle Brewfile
 brew bundle
 
+# Setup Git aliases
+git config --global --add include.path $HOME/.dotfiles/git/alias
+
 # Setup Directory and SymbolicLink
 BASE=$HOME/.dotfiles
 XDG_CONFIG_HOME=$(cat $BASE/zshrc | grep 'export XDG_CONFIG_HOME=' | awk -F= '{print $NF}')
