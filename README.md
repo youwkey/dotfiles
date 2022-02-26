@@ -16,6 +16,12 @@ brew bundle
 # Setup Git aliases
 git config --global --add include.path $HOME/.dotfiles/git/alias
 
+# Setup Git global ignores
+git config --global --add core.excludesFile $HOME/.dotfiles/git/gitignore_global
+
+# (Optional) If you want to setup git hooks
+git config --global --add core.hooksPath $HOME/.dotfiles/git/hooks
+
 # Setup Directory and SymbolicLink
 BASE=$HOME/.dotfiles
 XDG_CONFIG_HOME=$(cat $BASE/zshrc | grep 'export XDG_CONFIG_HOME=' | awk -F= '{print $NF}')

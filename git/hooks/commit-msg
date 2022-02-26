@@ -1,0 +1,40 @@
+#!/bin/sh
+
+REPO_ROOT=`git rev-parse --show-superproject-working-tree --show-toplevel | head -1`
+HOOK_NAME=`basename $0`
+LOCAL_HOOK="${REPO_ROOT}/.git/hooks/${HOOK_NAME}"
+
+if [ -e $LOCAL_HOOK ]; then
+  source $LOCAL_HOOK
+fi
+
+prefix=`cat $1 | head -1 | awk -F ":" '{print $1}'`
+
+if
+  [ "$prefix" != "feat" ] &&
+  [ "$prefix" != "fix" ] &&
+  [ "$prefix" != "docs" ] &&
+  [ "$prefix" != "refactor" ] &&
+  [ "$prefix" != "update" ] &&
+  [ "$prefix" != "perf" ] &&
+  [ "$prefix" != "test" ] &&
+  [ "$prefix" != "chore" ]; then
+  cat << EOF
+  Invalid commit message prefix.
+
+  commit message prefix:
+    <prefix>: <message...>
+
+  prefixes:
+    feat      Add new feature
+    fix       Bug fix
+    docs      Fix regarding documents
+    refactor  Refactoring code
+    update    Update such as runtime and dependency library
+    pref      Inproved performance
+    test      Fix regarding tests
+    chore     Chore such as build and tools
+
+EOF
+  exit 1
+fi
