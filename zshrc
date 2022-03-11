@@ -50,6 +50,7 @@ alias lg="lazygit"
 alias groot="cd-gitroot"
 alias zshrc="vi ${HOME}/.zshrc"
 alias dots="cd ${HOME}/.dotfiles"
+alias doc="docker-compose"
 alias g="fzf_ghq_open"
 
 #==================================================================================================
