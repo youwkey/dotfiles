@@ -11,6 +11,7 @@ fi
 prefix=`cat $1 | head -1 | awk -F ":" '{print $1}'`
 
 if
+  [ "$prefix" != "initial commit" ] &&
   [ "$prefix" != "feat" ] &&
   [ "$prefix" != "fix" ] &&
   [ "$prefix" != "docs" ] &&
@@ -18,6 +19,7 @@ if
   [ "$prefix" != "update" ] &&
   [ "$prefix" != "perf" ] &&
   [ "$prefix" != "test" ] &&
+  [ "$prefix" != "setup" ] &&
   [ "$prefix" != "chore" ]; then
   cat << EOF
   Invalid commit message prefix.
