@@ -2,9 +2,9 @@ Dot Files
 =========
 
 ## Setup
-``` sh
+```shell
 # Setup Repository
-git clone https://github.com/ywatanabeznzt/dotfiles.git $HOME/.dotfiles
+git clone https://github.com/youwkey/dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
 
 # (Optional) If you want to disable any formula, comment out in Brewfile
@@ -30,6 +30,8 @@ XDG_CACHE_HOME=$(cat $BASE/zshrc | grep 'export XDG_CACHE_HOME=' | awk -F= '{pri
 mkdir $XDG_CONFIG_HOME $XDG_CACHE_HOME
 mkdir -p $XDG_CACHE_HOME/vim/{backup,undo}
 ln -sfn $BASE/zshrc $HOME/.zshrc
+ln -sfn $BASE/zsh $XDG_CONFIG_HOME/sheldon
+ln -sfn $BASE/zsh/p10k.zsh $HOME/.p10k.zsh
 ln -sfn $BASE/vimrc $HOME/.vimrc
 ln -sfn $BASE/vim $HOME/.vim
 

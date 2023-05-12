@@ -1,0 +1,43 @@
+shell = 'zsh'
+
+[plugins.zsh-defer]
+github = 'romkatv/zsh-defer'
+apply = ['source']
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit'
+
+[plugins.colors]
+inline = 'autoload -Uz colors && zsh-defer colors'
+
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
+
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+apply = ['defer']
+
+[plugins.fast-syntax-highlighting]
+github = 'zdharma/fast-syntax-highlighting'
+apply = ['defer']
+
+[plugins.zsh-completions]
+github = 'zsh-users/zsh-completions'
+apply = ['defer']
+
+[plugins.git-completion]
+remote = 'https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh'
+apply = ['defer']
+
+[plugins.dotfiles-sync]
+local = '~/.dotfiles/zsh/sync'
+use = ['*.zsh']
+apply = ['source']
+
+[plugins.dotfiles-defer]
+local = '~/.dotfiles/zsh/defer'
+use = ['*.zsh']
+apply = ['defer']
