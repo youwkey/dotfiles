@@ -10,9 +10,3 @@ function fzf_ghq_open() {
     --bind 'ctrl-b:execute(open https://{})+accept')
   [[ ${item} ]] && cd $(ghq root)/${item} || :
 }
-
-function fzf_history_search() {
-  BUFFER=$(history -n -r 1 | awk '!a[$0]++' | fzf --no-sort --prompt="History> ")
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
