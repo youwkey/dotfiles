@@ -41,4 +41,7 @@ anyenv install --init
 # Install Anyenv Packages
 anyenv install goenv
 anyenv install nodenv
+
+# configure p10k
+p10k configure
 ```
