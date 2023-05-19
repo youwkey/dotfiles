@@ -24,8 +24,8 @@ git config --global --add core.hooksPath $HOME/.dotfiles/git/hooks
 
 # Setup Directory and SymbolicLink
 BASE=$HOME/.dotfiles
-XDG_CONFIG_HOME=$(cat $BASE/zshrc | grep 'export XDG_CONFIG_HOME=' | awk -F= '{print $NF}')
-XDG_CACHE_HOME=$(cat $BASE/zshrc | grep 'export XDG_CACHE_HOME=' | awk -F= '{print $NF}')
+XDG_CONFIG_HOME=$(cat $BASE/zsh/sync/env.zsh | grep 'export XDG_CONFIG_HOME=' | awk -F= '{print $NF}')
+XDG_CACHE_HOME=$(cat $BASE/zsh/sync/env.zsh | grep 'export XDG_CACHE_HOME=' | awk -F= '{print $NF}')
 
 mkdir $XDG_CONFIG_HOME $XDG_CACHE_HOME
 mkdir -p $XDG_CACHE_HOME/vim/{backup,undo}
