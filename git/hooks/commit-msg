@@ -11,6 +11,7 @@ fi
 prefix=`cat $1 | head -1 | awk -F ":" '{print $1}'`
 
 if
+  [[ "$prefix" != "Merge "* ]] &&
   [ "$prefix" != "initial commit" ] &&
   [ "$prefix" != "feat" ] &&
   [ "$prefix" != "fix" ] &&
