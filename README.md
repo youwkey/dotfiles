@@ -34,6 +34,7 @@ ln -sfn $BASE/zsh $XDG_CONFIG_HOME/sheldon
 ln -sfn $BASE/zsh/p10k.zsh $HOME/.p10k.zsh
 ln -sfn $BASE/vimrc $HOME/.vimrc
 ln -sfn $BASE/vim $HOME/.vim
+ln -sfn $BASE/lazygit/config.yml $XDG_CONFIG_HOME/lazygit/config.yml
 
 # Setup Anyenv
 anyenv install --init
