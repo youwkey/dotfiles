@@ -15,6 +15,7 @@ brew "ripgrep"
 brew "tree"
 brew "jesseduffield/lazygit/lazygit"
 brew "grep" # for tfenv
+brew "svn"
 cask "1password"
 cask "alfred"
 cask "docker"
