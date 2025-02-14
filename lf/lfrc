@@ -1,0 +1,30 @@
+set icons
+set drawbox
+set incsearch
+set incfilter
+
+setlocal ~/Downloads sortby time
+setlocal ~/Downloads reverse
+setlocal ~/Downloads dirfirst false
+
+set previewer ~/.config/lf/preview.sh
+
+cmd debug ${{
+    echo '-------------'
+    echo $fx
+    echo '-------------'
+}}
+
+cmd trash-files ${{
+    printf "Move to trash? (y/N): "
+    read ans
+    case $ans in
+      [Yy]* )
+        IFS="$(printf '\n\t')"; echo mv $fx ~/.trash
+        ;;
+      * )
+        echo "Aborted."
+        ;;
+    esac
+}}
+map D trash-files
