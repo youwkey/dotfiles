@@ -22,6 +22,12 @@ function M.apply(config)
     config.window_background_opacity = 0.85
     config.macos_window_background_blur = 10
 
+    -- ペイン
+    config.inactive_pane_hsb = {
+        saturation = 0.9,
+        brightness = 0.4,
+    }
+
     -- タブ
     config.enable_tab_bar = true
     config.hide_tab_bar_if_only_one_tab = false
