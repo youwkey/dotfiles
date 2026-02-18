@@ -36,6 +36,7 @@ ln -sfn $BASE/vimrc $HOME/.vimrc
 ln -sfn $BASE/vim $HOME/.vim
 ln -sfn $BASE/lf $XDG_CONFIG_HOME/lf
 ln -sfn $BASE/lazygit/config.yml $XDG_CONFIG_HOME/lazygit/config.yml
+ln -sfn $BASE/wezterm $XDG_CONFIG_HOME/wezterm
 
 # Setup Anyenv
 anyenv install --init
