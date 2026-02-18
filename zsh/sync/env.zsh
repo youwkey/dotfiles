@@ -30,3 +30,5 @@ export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --bind '${X_FZF_BIND}'"
 # GHQディレクトリを設定
 export GHQ_ROOT=$HOME/devspace/ghq
 type go > /dev/null && export PATH=$(go env GOPATH)/bin:$PATH
+# Claude用
+export PATH="$HOME/.local/bin:$PATH"
