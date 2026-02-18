@@ -17,6 +17,7 @@ brew "grep" # for tfenv
 brew "glow"
 brew "lf"
 brew "eza"
+brew "git-delta"
 cask "1password"
 cask "alfred"
 cask "docker"

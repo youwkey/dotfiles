@@ -16,6 +16,14 @@ brew bundle
 # Setup Git aliases
 git config --global --add include.path $HOME/.dotfiles/git/alias
 
+# Setup git-delta
+git config --global --add core.pager delta
+git config --global --add interactive.diffFilter "delta --color-only"
+git config --global --add delta.navigate true
+git config --global --add delta.line-numbers true
+git config --global --add delta.syntax-theme "TokyoNight"
+git config --global --add delta.features "decorations"
+
 # Setup Git global ignores
 git config --global --add core.excludesFile $HOME/.dotfiles/git/gitignore_global
 
