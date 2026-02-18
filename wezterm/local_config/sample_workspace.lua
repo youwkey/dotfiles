@@ -9,14 +9,18 @@
 --   tabs:    table       タブ・ペイン定義（省略でシェル1つ）
 --
 -- ■ tabs 内の各タブ
---   title:  string   タブ名（省略でプロセス名が表示される）
+--   title:  string   タブ名（省略で "tab"）
+--   cwd:    string   タブの作業ディレクトリ（省略でワークスペースの cwd）
 --   panes:  table    ペイン定義の配列
 --
 -- ■ panes 内の各ペイン
 --   split: "Right" | "Bottom"   分割方向（2番目以降のペインで必須）
 --   size:  0.0〜1.0             分割比率（デフォルト: 0.5）
---   cwd:   string               個別の作業ディレクトリ（省略でワークスペースの cwd）
+--   cwd:   string               個別の作業ディレクトリ（省略でタブの cwd）
 --   args:  {"cmd", "arg", ...}  起動コマンド（省略でシェル）
+--
+-- ■ cwd のフォールバック順
+--   ワークスペース cwd ← タブ cwd ← ペイン cwd
 local wezterm = require("wezterm")
 
 return {

@@ -47,12 +47,13 @@ local function setup_layout(ws, mux_window)
     end
 
     for i, tab_def in ipairs(tabs) do
+        local tab_cwd = tab_def.cwd or ws.cwd
         local tab, pane
         if i == 1 then
             tab = mux_window:tabs()[1]
             pane = tab:panes()[1]
         else
-            tab, pane, _ = mux_window:spawn_tab({ cwd = ws.cwd })
+            tab, pane, _ = mux_window:spawn_tab({ cwd = tab_cwd })
         end
 
         local title = i .. ": " .. (tab_def.title or "tab") .. " "
@@ -60,9 +61,10 @@ local function setup_layout(ws, mux_window)
 
         if tab_def.panes then
             for j, pane_def in ipairs(tab_def.panes) do
+                local pane_cwd = pane_def.cwd or tab_cwd
                 if j == 1 then
-                    if pane_def.cwd then
-                        pane:send_text("cd " .. pane_def.cwd .. "\n")
+                    if pane_cwd ~= ws.cwd then
+                        pane:send_text("cd " .. pane_cwd .. "\n")
                     end
                     if pane_def.args then
                         pane:send_text(table.concat(pane_def.args, " ") .. "\n")
@@ -70,7 +72,7 @@ local function setup_layout(ws, mux_window)
                 else
                     local split_opts = {
                         direction = pane_def.split or "Right",
-                        cwd = pane_def.cwd or ws.cwd,
+                        cwd = pane_cwd,
                         size = pane_def.size or 0.5,
                     }
                     local new_pane = pane:split(split_opts)
