@@ -16,6 +16,7 @@ brew "jesseduffield/lazygit/lazygit"
 brew "grep" # for tfenv
 brew "glow"
 brew "lf"
+brew "eza"
 cask "1password"
 cask "alfred"
 cask "docker"
