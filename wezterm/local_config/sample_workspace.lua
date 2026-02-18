@@ -20,7 +20,7 @@
 local wezterm = require("wezterm")
 
 return {
-    enabled = true,
+    enabled = false,
     name = "home",
     cwd = wezterm.home_dir,
     tabs = {
