@@ -1,3 +1,6 @@
 gui:
   language: 'en'
-
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --line-numbers

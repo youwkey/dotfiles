@@ -21,7 +21,7 @@ git config --global --add core.pager delta
 git config --global --add interactive.diffFilter "delta --color-only"
 git config --global --add delta.navigate true
 git config --global --add delta.line-numbers true
-git config --global --add delta.syntax-theme "TokyoNight"
+git config --global --add delta.syntax-theme "OneHalfDark"
 git config --global --add delta.features "decorations"
 
 # Setup Git global ignores
