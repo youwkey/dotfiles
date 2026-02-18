@@ -10,11 +10,11 @@ function M.apply(config)
             action = wezterm.action.SpawnTab("CurrentPaneDomain"),
         },
 
-        -- タブを閉じる
+        -- ペインを閉じる（最後のペインならタブも閉じる）
         {
             key = "w",
             mods = "CMD",
-            action = wezterm.action.CloseCurrentTab({ confirm = true }),
+            action = wezterm.action.CloseCurrentPane({ confirm = true }),
         },
 
         -- 水平分割（左右）
@@ -50,13 +50,6 @@ function M.apply(config)
             key = "j",
             mods = "CMD",
             action = wezterm.action.ActivatePaneDirection("Down"),
-        },
-
-        -- ペイン閉じる
-        {
-            key = "w",
-            mods = "CMD|SHIFT",
-            action = wezterm.action.CloseCurrentPane({ confirm = true }),
         },
 
         -- タブ切り替え (CMD + 1〜9)
@@ -130,6 +123,20 @@ function M.apply(config)
             end),
         })
     end
+
+    -- ワークスペースを閉じる (CMD+SHIFT+W)
+    table.insert(config.keys, {
+        key = "w",
+        mods = "CMD|SHIFT",
+        action = wezterm.action_callback(function(window, pane)
+            local close = wezterm.action.CloseCurrentTab({ confirm = false })
+            local actions = {}
+            for _ = 1, #window:mux_window():tabs() do
+                table.insert(actions, close)
+            end
+            window:perform_action(wezterm.action.Multiple(actions), pane)
+        end),
+    })
 end
 
 return M
