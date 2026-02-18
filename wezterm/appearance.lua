@@ -27,6 +27,8 @@ function M.apply(config)
     config.hide_tab_bar_if_only_one_tab = true
     config.use_fancy_tab_bar = false
     config.tab_bar_at_bottom = false
+    config.window_decorations = "RESIZE"
+    config.show_new_tab_button_in_tab_bar = false
 
     -- ウィンドウ
     config.window_padding = {
