@@ -39,6 +39,15 @@ local function workspace_exists(name)
     return false
 end
 
+-- タブ定義の最初のペインの cwd を解決
+local function resolve_first_pane_cwd(ws, tab_def)
+    local tab_cwd = tab_def.cwd or ws.cwd
+    if tab_def.panes and tab_def.panes[1] and tab_def.panes[1].cwd then
+        return tab_def.panes[1].cwd
+    end
+    return tab_cwd
+end
+
 -- tabs 定義からレイアウトを構築
 local function setup_layout(ws, mux_window)
     local tabs = ws.tabs
@@ -53,7 +62,7 @@ local function setup_layout(ws, mux_window)
             tab = mux_window:tabs()[1]
             pane = tab:panes()[1]
         else
-            tab, pane, _ = mux_window:spawn_tab({ cwd = tab_cwd })
+            tab, pane, _ = mux_window:spawn_tab({ cwd = resolve_first_pane_cwd(ws, tab_def) })
         end
 
         local title = i .. ": " .. (tab_def.title or "tab") .. " "
@@ -61,18 +70,14 @@ local function setup_layout(ws, mux_window)
 
         if tab_def.panes then
             for j, pane_def in ipairs(tab_def.panes) do
-                local pane_cwd = pane_def.cwd or tab_cwd
                 if j == 1 then
-                    if pane_cwd ~= ws.cwd then
-                        pane:send_text("cd " .. pane_cwd .. "\n")
-                    end
                     if pane_def.args then
                         pane:send_text(table.concat(pane_def.args, " ") .. "\n")
                     end
                 else
                     local split_opts = {
                         direction = pane_def.split or "Right",
-                        cwd = pane_cwd,
+                        cwd = pane_def.cwd or tab_cwd,
                         size = pane_def.size or 0.5,
                     }
                     local new_pane = pane:split(split_opts)
@@ -143,15 +148,22 @@ function M.apply(config)
                             return
                         end
 
+                        local ws = configs[id]
+                        local is_new = ws and not workspace_exists(id)
+
                         -- tabs 定義があり未作成ならレイアウト適用をキューに入れる
-                        if configs[id] and configs[id].tabs and not workspace_exists(id) then
-                            pending_layouts[id] = configs[id]
+                        if is_new and ws.tabs then
+                            pending_layouts[id] = ws
                         end
 
                         -- SwitchToWorkspace が未作成なら作成、既存なら切り替え
                         local switch_opts = { name = id }
-                        if configs[id] and not workspace_exists(id) then
-                            switch_opts.spawn = { cwd = configs[id].cwd }
+                        if is_new then
+                            local spawn_cwd = ws.cwd
+                            if ws.tabs and ws.tabs[1] then
+                                spawn_cwd = resolve_first_pane_cwd(ws, ws.tabs[1])
+                            end
+                            switch_opts.spawn = { cwd = spawn_cwd }
                         end
                         inner_window:perform_action(
                             act.SwitchToWorkspace(switch_opts),
