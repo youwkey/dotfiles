@@ -61,6 +61,9 @@ local function setup_layout(ws, mux_window)
         if tab_def.panes then
             for j, pane_def in ipairs(tab_def.panes) do
                 if j == 1 then
+                    if pane_def.cwd then
+                        pane:send_text("cd " .. pane_def.cwd .. "\n")
+                    end
                     if pane_def.args then
                         pane:send_text(table.concat(pane_def.args, " ") .. "\n")
                     end
