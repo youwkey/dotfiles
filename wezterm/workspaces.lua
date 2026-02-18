@@ -86,6 +86,7 @@ local function setup_layout(ws, mux_window)
                     end
                 end
             end
+            pane:activate()
         end
     end
 end
