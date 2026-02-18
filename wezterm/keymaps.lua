@@ -113,6 +113,23 @@ function M.apply(config)
             action = wezterm.action.EmitEvent("toggle-theme"),
         },
     }
+
+    -- ワークスペース切り替え (CMD+SHIFT + 1〜9)
+    for i = 1, 9 do
+        table.insert(config.keys, {
+            key = "phys:" .. tostring(i),
+            mods = "CMD|SHIFT",
+            action = wezterm.action_callback(function(window, pane)
+                local workspaces = wezterm.mux.get_workspace_names()
+                if i <= #workspaces then
+                    window:perform_action(
+                        wezterm.action.SwitchToWorkspace({ name = workspaces[i] }),
+                        pane
+                    )
+                end
+            end),
+        })
+    end
 end
 
 return M

@@ -7,14 +7,13 @@ function M.setup()
         local workspaces = wezterm.mux.get_workspace_names()
 
         local items = {}
-        for _, name in ipairs(workspaces) do
+        for i, name in ipairs(workspaces) do
             if name == active then
                 table.insert(items, { Foreground = { AnsiColor = "Green" } })
-                table.insert(items, { Text = " " .. name .. " " })
             else
                 table.insert(items, { Foreground = { AnsiColor = "Grey" } })
-                table.insert(items, { Text = " " .. name .. " " })
             end
+            table.insert(items, { Text = " " .. i .. ": " .. name .. " " })
         end
 
         window:set_right_status(wezterm.format(items))
