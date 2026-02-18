@@ -2,6 +2,24 @@ local wezterm = require("wezterm")
 local M = {}
 
 function M.setup()
+    wezterm.on("update-right-status", function(window, pane)
+        local active = window:active_workspace()
+        local workspaces = wezterm.mux.get_workspace_names()
+
+        local items = {}
+        for _, name in ipairs(workspaces) do
+            if name == active then
+                table.insert(items, { Foreground = { AnsiColor = "Green" } })
+                table.insert(items, { Text = " " .. name .. " " })
+            else
+                table.insert(items, { Foreground = { AnsiColor = "Grey" } })
+                table.insert(items, { Text = " " .. name .. " " })
+            end
+        end
+
+        window:set_right_status(wezterm.format(items))
+    end)
+
     wezterm.on("toggle-theme", function(window, pane)
         local overrides = window:get_config_overrides() or {}
 

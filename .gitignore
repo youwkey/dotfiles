@@ -1,2 +1,4 @@
 Brewfile.lock.json
 *.local.zsh
+wezterm/local_config/*
+!wezterm/local_config/sample_workspace.lua
