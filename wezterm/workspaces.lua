@@ -118,18 +118,21 @@ function M.apply(config)
         mods = "CMD",
         action = wezterm.action_callback(function(window, pane)
             local configs = load_workspace_configs()
+            local current_ws = window:active_workspace()
 
-            -- InputSelector の選択肢を構築
+            -- InputSelector の選択肢を構築（現在のワークスペースは除外）
             local choices = {}
             local seen = {}
 
             for name, _ in pairs(configs) do
-                table.insert(choices, { id = name, label = name })
+                if name ~= current_ws then
+                    table.insert(choices, { id = name, label = name })
+                end
                 seen[name] = true
             end
 
             for _, name in ipairs(mux.get_workspace_names()) do
-                if not seen[name] then
+                if not seen[name] and name ~= current_ws then
                     table.insert(choices, { id = name, label = name })
                 end
             end
