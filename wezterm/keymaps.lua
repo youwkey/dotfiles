@@ -3,6 +3,17 @@ local M = {}
 
 function M.apply(config)
     config.keys = {
+        -- バックスラッシュ
+        {
+            key = "¥",
+            action = wezterm.action.SendString("\\")
+        },
+        -- 改行入力
+        {
+            key = "Enter",
+            mods = "SHIFT",
+            action = wezterm.action.SendString("\n"),
+        },
         -- 新しいタブ
         {
             key = "t",
