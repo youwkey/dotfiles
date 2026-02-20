@@ -1,7 +1,11 @@
+set hidden
+set mouse
 set icons
 set drawbox
 set incsearch
 set incfilter
+set scrolloff 5
+set dircounts
 
 setlocal ~/Downloads sortby time
 setlocal ~/Downloads reverse
