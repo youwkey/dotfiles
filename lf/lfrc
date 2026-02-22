@@ -13,22 +13,11 @@ setlocal ~/Downloads dirfirst false
 
 set previewer ~/.config/lf/preview.sh
 
-cmd debug ${{
-    echo '-------------'
-    echo $fx
-    echo '-------------'
-}}
-
-cmd trash-files ${{
-    printf "Move to trash? (y/N): "
-    read ans
-    case $ans in
-      [Yy]* )
-        IFS="$(printf '\n\t')"; echo mv $fx ~/.trash
-        ;;
-      * )
-        echo "Aborted."
-        ;;
-    esac
-}}
+cmd trash-files $~/.config/lf/trash.sh
 map D trash-files
+
+cmd mkdir %mkdir -p "$@"
+map A push :mkdir<space>
+
+cmd touch %touch "$@"
+map a push :touch<space>
