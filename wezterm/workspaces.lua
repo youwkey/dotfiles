@@ -98,6 +98,11 @@ function M.apply(config)
         if title then
             return title
         end
+
+        -- タブ名が定義されていない場合はカレントディレクトリ名を返す
+        local index = tab.tab_index + 1
+        local dir = tab.active_pane.current_working_dir.file_path:match("([^/]+)$")
+        return index .. ": " .. dir .. " "
     end)
 
     -- SwitchToWorkspace 完了後にレイアウトを適用
