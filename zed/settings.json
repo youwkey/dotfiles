@@ -1,7 +1,43 @@
 {
+  "theme": "One Dark",
+  "active_pane_modifiers": {
+    "boder_size": 0.0,
+    "inactive_opacity": 0.6,
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "delay_ms": 3000,
+    },
+    "branch_picker": {
+      "show_author_name": true,
+    },
+  },
   "base_keymap": "JetBrains",
   "buffer_font_family": "UDEV Gothic",
   "ui_font_family": "UDEV Gothic",
   "ui_font_size": 24,
   "buffer_font_size": 24,
+  "agent_ui_font_size": 24,
+  "agent_buffer_font_size": 24,
+  "tab_size": 2,
+  "hard_tabs": false,
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "vue": true,
+    "scss": true,
+    "lua": true,
+    "terraform": true,
+    "prisma": true,
+    "csv": true,
+    "ruby": true,
+    "git-firefly": true,
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+  },
 }
