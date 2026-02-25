@@ -1,7 +1,8 @@
 {
-  "theme": "One Dark",
+  "vim_mode": true,
+  "theme": "Tokyo Night",
   "active_pane_modifiers": {
-    "boder_size": 0.0,
+    "border_size": 0.0,
     "inactive_opacity": 0.6,
   },
   "git": {
@@ -18,6 +19,7 @@
   "ui_font_family": "UDEV Gothic",
   "ui_font_size": 24,
   "buffer_font_size": 24,
+  "buffer_line_height": "comfortable",
   "agent_ui_font_size": 24,
   "agent_buffer_font_size": 24,
   "tab_size": 2,
@@ -33,11 +35,26 @@
     "csv": true,
     "ruby": true,
     "git-firefly": true,
+    "tokyo-night": true,
   },
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true,
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true,
+    "activate_on_close": "history",
+    "show_close_button": "hover",
+    "show_diagnostics": "all",
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "project_panel": {
+    "auto_fold_dirs": false,
   },
 }
