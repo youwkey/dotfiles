@@ -1,7 +1,7 @@
 {
   "icon_theme": "Material Icon Theme",
   "vim_mode": true,
-  "theme": "Tokyo Night",
+  "theme": "One Dark",
   "active_pane_modifiers": {
     "border_size": 0.0,
     "inactive_opacity": 0.6,
@@ -36,7 +36,6 @@
     "csv": true,
     "ruby": true,
     "git-firefly": true,
-    "tokyo-night": true,
     "material-icon-theme": true,
   },
   "inlay_hints": {
