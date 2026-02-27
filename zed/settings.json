@@ -1,4 +1,5 @@
 {
+  "icon_theme": "Material Icon Theme",
   "vim_mode": true,
   "theme": "Tokyo Night",
   "active_pane_modifiers": {
@@ -36,6 +37,7 @@
     "ruby": true,
     "git-firefly": true,
     "tokyo-night": true,
+    "material-icon-theme": true,
   },
   "inlay_hints": {
     "enabled": true,
