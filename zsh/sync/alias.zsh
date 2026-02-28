@@ -4,6 +4,7 @@
 alias l="eza --long --all --git --icons --no-user --no-permissions --no-time --no-filesize"
 alias ll="eza --long --git --icons"
 alias la="eza --long --all --git --icons"
+alias tree="eza --tree --icons"
 alias cat="bat"
 alias lg="lazygit"
 alias groot='cd $(git rev-parse --show-toplevel)'
