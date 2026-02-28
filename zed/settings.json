@@ -58,4 +58,5 @@
   "project_panel": {
     "auto_fold_dirs": false,
   },
+  "restore_on_startup": "launchpad",
 }
