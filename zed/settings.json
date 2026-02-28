@@ -59,4 +59,5 @@
     "auto_fold_dirs": false,
   },
   "restore_on_startup": "launchpad",
+  "scroll_beyond_last_line": "vertical_scroll_margin",
 }
