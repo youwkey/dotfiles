@@ -37,6 +37,7 @@ XDG_CACHE_HOME=$(cat $BASE/zsh/sync/env.zsh | grep 'export XDG_CACHE_HOME=' | aw
 
 mkdir $XDG_CONFIG_HOME $XDG_CACHE_HOME
 mkdir -p $XDG_CACHE_HOME/vim/{backup,undo}
+ln -sfn $BASE/zprofile $HOME/.zprofile
 ln -sfn $BASE/zshrc $HOME/.zshrc
 ln -sfn $BASE/zsh $XDG_CONFIG_HOME/sheldon
 ln -sfn $BASE/zsh/p10k.zsh $HOME/.p10k.zsh
@@ -53,6 +54,9 @@ anyenv install --init
 # Install Anyenv Packages
 anyenv install goenv
 anyenv install nodenv
+anyenv install pyenv
+anyenv install tfenv
+anyenv install rbenv
 
 # configure p10k
 p10k configure
