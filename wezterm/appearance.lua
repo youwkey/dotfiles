@@ -46,7 +46,7 @@ function M.apply(config)
 
   -- カーソル
   config.default_cursor_style = "SteadyBar"
-  config.cursor_thickness = 4
+  config.cursor_thickness = 20
   config.cursor_blink_rate = 0
 
   -- スクロール
