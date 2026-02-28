@@ -1,7 +1,7 @@
-.idea
+.idea/
+.zed/
 .DS_Store
-.node-version
 .claude/settings.local.json
 .claude/skills/private-*
 .claude/agents/private-*
-
+mise.toml

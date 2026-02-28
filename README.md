@@ -48,15 +48,12 @@ ln -sfn $BASE/lazygit/config.yml $XDG_CONFIG_HOME/lazygit/config.yml
 ln -sfn $BASE/wezterm $XDG_CONFIG_HOME/wezterm
 ln -sfn $BASE/zed $XDG_CONFIG_HOME/zed
 
-# Setup Anyenv
-anyenv install --init
-
-# Install Anyenv Packages
-anyenv install goenv
-anyenv install nodenv
-anyenv install pyenv
-anyenv install tfenv
-anyenv install rbenv
+# Setup mise
+mise use --global go@latest
+mise use --global node@latest
+mise use --global python@latest
+mise use --global ruby@latest
+mise use --global terraform@latest
 
 # configure p10k
 p10k configure
