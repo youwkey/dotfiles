@@ -7,7 +7,7 @@ export LSCOLORS='gxfxcxdxbxegedabagacad'
 # コマンド履歴を保存するファイルを指定
 export HISTFILE=~/.zsh_history
 # メモリに保存する履歴の件数
-export HISTSIZE=1000
+export HISTSIZE=1000000
 # ファイルに保存する履歴の件数
 export SAVEHIST=1000000
 # 文字コードにUTF-8を指定
