@@ -9,14 +9,21 @@ brew "ghq"
 brew "git"
 brew "jq"
 brew "ripgrep"
+brew "fd"
 brew "lazygit"
 brew "glow"
 brew "lf"
 brew "eza"
 brew "git-delta"
 brew "chafa"
-brew "poppler"
 brew "mdcat"
+brew "yazi"
+brew "ffmpeg-full" # yazi dependency
+brew "sevenzip" # yazi dependency
+brew "poppler" # yazi dependency
+brew "zoxide" # yazi dependency
+brew "resvg" # yazi dependency
+brew "imagemagick-full" # yazi dependency
 
 # cask
 cask "1password"
