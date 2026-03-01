@@ -21,7 +21,7 @@ function fzf_ssh_connect() {
   [[ ${item} ]] && ssh ${item} || :
 }
 
-function y() {
+function yazi_open() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
 	IFS= read -r -d '' cwd < "$tmp"
