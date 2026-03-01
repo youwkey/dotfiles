@@ -3,3 +3,4 @@ Brewfile.lock.json
 wezterm/local_config/*
 !wezterm/local_config/sample_workspace.lua
 zed/prompts
+yazi/plugins
