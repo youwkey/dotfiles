@@ -9,7 +9,6 @@ brew "ghq"       # リポジトリ管理
 brew "lazygit"   # Git TUI
 brew "git-delta" # Git diff ビューアー
 brew "jq"        # JSONプロセッサー
-brew "glow"      # Markdownレンダラー
 brew "mdcat"     # Markdownレンダラー
 
 #==================================================================================================
@@ -42,11 +41,8 @@ cask "1password"
 cask "alfred"
 cask "docker-desktop"
 cask "google-chrome"
-cask "jetbrains-toolbox"
 cask "alt-tab"
-cask "slack"
 cask "gcloud-cli"
-cask "microsoft-office"
 cask "bettertouchtool"
 cask "wezterm"
 cask "font-moralerspace"
