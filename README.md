@@ -3,55 +3,9 @@ Dot Files
 
 ## Setup
 ```shell
-# Setup Repository
 git clone https://github.com/youwkey/dotfiles.git $HOME/.dotfiles
 cd $HOME/.dotfiles
-
-# (Optional) If you want to disable any formula, comment out in Brewfile
-vi Brewfile
-
-# Bundle Brewfile
 brew bundle
-
-# Setup git-delta
-git config --global --add core.pager delta
-git config --global --add interactive.diffFilter "delta --color-only"
-git config --global --add delta.navigate true
-git config --global --add delta.line-numbers true
-git config --global --add delta.syntax-theme "OneHalfDark"
-git config --global --add delta.features "decorations"
-
-# Setup Git global ignores
-git config --global --add core.excludesFile $HOME/.dotfiles/git/gitignore_global
-
-# (Optional) If you want to setup git hooks
-git config --global --add core.hooksPath $HOME/.dotfiles/git/hooks
-
-# Setup Directory and SymbolicLink
-BASE=$HOME/.dotfiles
-XDG_CONFIG_HOME=$(cat $BASE/zsh/sync/env.zsh | grep 'export XDG_CONFIG_HOME=' | awk -F= '{print $NF}')
-XDG_CACHE_HOME=$(cat $BASE/zsh/sync/env.zsh | grep 'export XDG_CACHE_HOME=' | awk -F= '{print $NF}')
-
-mkdir $XDG_CONFIG_HOME $XDG_CACHE_HOME
-mkdir -p $XDG_CACHE_HOME/vim/{backup,undo}
-ln -sfn $BASE/zprofile $HOME/.zprofile
-ln -sfn $BASE/zshrc $HOME/.zshrc
-ln -sfn $BASE/zsh $XDG_CONFIG_HOME/sheldon
-ln -sfn $BASE/zsh/p10k.zsh $HOME/.p10k.zsh
-ln -sfn $BASE/vimrc $HOME/.vimrc
-ln -sfn $BASE/vim $HOME/.vim
-ln -sfn $BASE/lazygit/config.yml $XDG_CONFIG_HOME/lazygit/config.yml
-ln -sfn $BASE/wezterm $XDG_CONFIG_HOME/wezterm
-ln -sfn $BASE/zed $XDG_CONFIG_HOME/zed
-ln -sfn $BASE/yazi $XDG_CONFIG_HOME/yazi
-
-# Setup mise
-mise use --global go@latest
-mise use --global node@latest
-mise use --global python@latest
-mise use --global ruby@latest
-mise use --global terraform@latest
-
-# configure p10k
+bash init.sh
 p10k configure
 ```
