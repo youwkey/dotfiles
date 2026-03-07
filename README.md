@@ -13,9 +13,6 @@ vi Brewfile
 # Bundle Brewfile
 brew bundle
 
-# Setup Git aliases
-git config --global --add include.path $HOME/.dotfiles/git/alias
-
 # Setup git-delta
 git config --global --add core.pager delta
 git config --global --add interactive.diffFilter "delta --color-only"
