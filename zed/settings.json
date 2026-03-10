@@ -1,6 +1,6 @@
 {
   "icon_theme": "Material Icon Theme",
-  "vim_mode": true,
+  "vim_mode": false,
   "theme": "One Dark",
   "active_pane_modifiers": {
     "border_size": 0.0,
