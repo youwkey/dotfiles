@@ -12,6 +12,7 @@ alias grep="rg"
 alias find="fd"
 alias vi="vim"
 alias md="mdcat"
+alias diff="delta --side-by-side"
 
 #==================================================================================================
 # Git
