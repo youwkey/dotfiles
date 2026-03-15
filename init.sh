@@ -45,4 +45,7 @@ mise use --global python@latest
 mise use --global ruby@latest
 mise use --global terraform@latest
 
+# Setup yazi
+ya pkg install
+
 echo "Done! Run 'p10k configure' to setup Powerlevel10k."
