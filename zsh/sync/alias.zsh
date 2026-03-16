@@ -33,6 +33,7 @@ alias gds="git -c delta.side-by-side=true diff"
 # ショートカット
 #==================================================================================================
 alias dots="cd ~/.dotfiles"
+alias dev="cd ~/devspace"
 alias g="fzf_ghq_open"
 alias s="fzf_ssh_connect"
 alias y="yazi_open"
