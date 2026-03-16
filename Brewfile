@@ -22,6 +22,7 @@ brew "dust"      # du
 brew "duf"       # df
 brew "trash"     # rm
 brew "vim"       # vi
+brew "zoxide"    # cd
 
 #==================================================================================================
 # ファイルマネージャー
@@ -30,7 +31,6 @@ brew "yazi"            # ターミナルファイルマネージャー
 brew "ffmpeg-full"      # yazi dependency
 brew "sevenzip"         # yazi dependency
 brew "poppler"          # yazi dependency
-brew "zoxide"           # yazi dependency
 brew "resvg"            # yazi dependency
 brew "imagemagick-full" # yazi dependency
 

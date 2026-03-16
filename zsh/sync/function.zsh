@@ -5,7 +5,10 @@ function fzf_ghq_open() {
   local -r FZF_PROMPT='Open Repository> '
   local -r FZF_HEADER='<Ctrl-B>: Browse Repository, <Ctrl-O>: Open in Zed'
   local -r PREVIEW='bat --color=always --number $(ghq root)/{}/README.md'
-  local item=$(ghq list | fzf --prompt="${FZF_PROMPT}" --header "${FZF_HEADER}" \
+  local item=$(ghq list --full-path | while read dir; do
+    local score=$(zoxide query -s "$dir" 2>/dev/null | awk '{print $1}')
+    echo "${score:-0} $dir"
+  done | sort -rn | awk '{print $2}' | sed "s|$(ghq root)/||" | fzf --prompt="${FZF_PROMPT}" --header "${FZF_HEADER}" \
     --preview "${PREVIEW}" \
     --bind 'ctrl-b:execute(open https://{})' \
     --bind 'ctrl-o:execute(zed $(ghq root)/{})'
