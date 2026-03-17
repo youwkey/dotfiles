@@ -22,7 +22,9 @@ alias ps="procs"
 #==================================================================================================
 alias lg="lazygit"
 alias groot='cd $(git rev-parse --show-toplevel)'
+alias gc="git checkout"
 alias gs="git status"
+alias gsw="git switch"
 alias gsu="git status -uall"
 alias gl="git log"
 alias gf="git fetch --all --prune"
