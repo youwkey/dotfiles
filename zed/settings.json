@@ -39,6 +39,7 @@
     "material-icon-theme": true,
     "toml": true,
     "log": true,
+    "harper": true,
   },
   "inlay_hints": {
     "enabled": true,
