@@ -10,6 +10,7 @@ brew "lazygit"   # Git TUI
 brew "git-delta" # Git diff ビューアー
 brew "jq"        # JSONプロセッサー
 brew "mdcat"     # Markdownレンダラー
+brew "uv"        # Pythonツール(Claude Serena MCP用)
 
 #==================================================================================================
 # モダンCLI
