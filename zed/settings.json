@@ -66,4 +66,5 @@
   "terminal": {
     "dock": "right",
   },
+  "soft_wrap": "none",
 }
