@@ -69,18 +69,22 @@ local function setup_layout(ws, mux_window)
         tab_titles[tab:tab_id()] = title
 
         if tab_def.panes then
+            local panes_list = {}
             for j, pane_def in ipairs(tab_def.panes) do
                 if j == 1 then
+                    panes_list[1] = pane
                     if pane_def.args then
                         pane:send_text(table.concat(pane_def.args, " ") .. "\n")
                     end
                 else
+                    local source_pane = panes_list[pane_def.split_from or 1]
                     local split_opts = {
                         direction = pane_def.split or "Right",
                         cwd = pane_def.cwd or tab_cwd,
                         size = pane_def.size or 0.5,
                     }
-                    local new_pane = pane:split(split_opts)
+                    local new_pane = source_pane:split(split_opts)
+                    panes_list[j] = new_pane
                     if pane_def.args then
                         new_pane:send_text(table.concat(pane_def.args, " ") .. "\n")
                     end
