@@ -4,3 +4,10 @@ wezterm/local_config/*
 !wezterm/local_config/sample_workspace.lua
 zed/prompts
 yazi/plugins
+dbgate/.key
+dbgate/cloud-instance.txt
+dbgate/connections.jsonl
+dbgate/cloud-files-tags.txt
+dbgate/cloud-files.jsonl
+dbgate/promo-widget.json
+dbgate/logs/

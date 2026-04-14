@@ -37,6 +37,7 @@ ln -sfn "$BASE/lazygit/config.yml" "$XDG_CONFIG_HOME/lazygit/config.yml"
 ln -sfn "$BASE/wezterm" "$XDG_CONFIG_HOME/wezterm"
 ln -sfn "$BASE/zed" "$XDG_CONFIG_HOME/zed"
 ln -sfn "$BASE/yazi" "$XDG_CONFIG_HOME/yazi"
+ln -sfn "$BASE/dbgate" "$HOME/.dbgate"
 
 # Setup mise
 mise use --global go@latest
