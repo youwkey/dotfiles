@@ -9,6 +9,7 @@ brew "ghq"               # リポジトリ管理
 brew "lazygit"           # Git TUI
 brew "git-delta"         # Git diff ビューアー
 brew "jq"                # JSONプロセッサー
+brew "fx"                # JSON TUI
 brew "mdcat"             # Markdownレンダラー
 brew "uv"                # Pythonツール(Claude Serena MCP用)
 brew "terminal-notifier" # MacOS通知ツール
