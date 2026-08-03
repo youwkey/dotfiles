@@ -6,3 +6,5 @@
 .claude/agents/private-*
 .serena
 mise.toml
+
+**/.claude/settings.local.json
