@@ -27,7 +27,6 @@ brew "trash"     # rm
 brew "vim"       # vi
 brew "zoxide"    # cd
 brew "bottom"    # top
-brew "curlie"    # curl
 brew "procs"     # ps
 
 #==================================================================================================

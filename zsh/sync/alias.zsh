@@ -14,7 +14,6 @@ alias vi="vim"
 alias md="mdcat"
 alias diff="delta --side-by-side"
 alias top="btm"
-alias curl="curlie"
 alias ps="procs"
 
 #==================================================================================================
